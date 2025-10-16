@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(99, 99, 252);
+    color: white;
+    text-align: center;
+    background-image: url( 'background femass.jpg' );
+    background-size: 1680px;
+
+    .header
+    {
+        background-color: white;  /* Barra branca */
+        padding: 40px;  /* Espaço interno */
+        text-align center;  /* Centraliza o texto */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);  /* Sombra para destaque */
+        border-bottom: 1px solid #ddd;  /* Linha fina embaixo */
+    }
+}
