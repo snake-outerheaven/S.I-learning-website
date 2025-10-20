@@ -1,0 +1,60 @@
+{
+  "name": "femass_si_wiki",
+  "version": "0.0.1",
+  "description": "Recursos de Aprendizado para o curso de Sistemas da Informação, da faculdade FEMASS",
+  "scripts": {
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs",
+    "test": "echo \"Sem testes ainda!\" && exit 0",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/snake-outerheaven/S.I-learning-website"
+  },
+  "keywords": [
+    "wiki",
+    "FEMASS",
+    "VitePress"
+  ],
+  "authors": [
+    {
+      "name": "snake-outerheaven",
+      "email": "sei133dirsoa@gmail.com",
+      "url": "https://github.com/snake-outerheaven"
+    },
+    {
+      "name": "Autor 2",
+      "email": "autor2@email.com",
+      "url": "https://github.com/autor2"
+    },
+    {
+      "name": "Autor 3",
+      "email": "autor3@email.com",
+      "url": "https://github.com/autor3"
+    },
+    {
+      "name": "Autor 4",
+      "email": "autor4@email.com",
+      "url": "https://github.com/autor4"
+    },
+    {
+      "name": "Autor 5",
+      "email": "autor5@email.com",
+      "url": "https://github.com/autor5"
+    },
+    {
+      "name": "Autor 6",
+      "email": "autor6@email.com",
+      "url": "https://github.com/autor6"
+    }
+  ],
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.12"
+  }
+}
