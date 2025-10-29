@@ -1,12 +1,22 @@
 {
-  "name": "project",
-  "version": "1.0.0",
+  "name": "Apresentação do Trabalho",
+  "version": "0.0.1",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Erro: Sem testes feitos\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "keywords": [
+    "Presentation",
+    "FEMASS",
+    "Learning Resources",
+    "WorkSpace"
+  ],
+  "private": "true",
+  "author": "neo-dev, Brenner-silva",
+  "license": "MIT",
+  "description": "Site para apresentação do Trabalho",
+  "dependencies": {
+    "express": "^5.1.0",
+    "morgan": "^1.10.1"
+  }
 }
