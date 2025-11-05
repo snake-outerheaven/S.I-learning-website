@@ -1,16 +1,50 @@
-body {
-    background-color: rgb(99, 99, 252);
-    color: white;
-    text-align: center;
-    background-image: url( 'background femass.jpg' );
-    background-size: 1680px;
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    .header
-    {
-        background-color: white;  /* Barra branca */
-        padding: 40px;  /* Espaço interno */
-        text-align center;  /* Centraliza o texto */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);  /* Sombra para destaque */
-        border-bottom: 1px solid #ddd;  /* Linha fina embaixo */
-    }
+/* Corpo da página */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, sans-serif;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    background-color: #000000; /* cor base caso a textura não carregue */
+}
+/* Container centralizado */
+.container {
+    text-align: center;
+    max-width: 800px;
+    width: 90%;
+    z-index: 0;
+}
+
+/* Título */
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Player de vídeo */
+.player {
+    width: 100%;
+    max-width: 720px;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 1rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    z-index: 0;
+}
+
+/* Descrição */
+.description {
+    font-size: 1rem;
+    color: #ccc;
+    z-index: 0;
 }
