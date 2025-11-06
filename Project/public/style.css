@@ -1,50 +1,60 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Corpo da página */
 body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: system-ui, sans-serif;
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-    background-color: #000000; /* cor base caso a textura não carregue */
-}
-/* Container centralizado */
-.container {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f9f9f9;
+    color: #222;
+    margin: 0;
     text-align: center;
+}
+
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+}
+
+.logo {
+    width: 120px;
+    margin-bottom: 10px;
+}
+
+h1,
+h2,
+h3 {
+    margin: 5px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin: 30px auto;
     max-width: 800px;
-    width: 90%;
-    z-index: 0;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Título */
-.title {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Player de vídeo */
-.player {
+li {
+    margin: 5px 0;
+}
+
+.video video {
     width: 100%;
     max-width: 720px;
-    border-radius: 10px;
-    outline: none;
-    margin-bottom: 1rem;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-    z-index: 0;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
-/* Descrição */
-.description {
-    font-size: 1rem;
-    color: #ccc;
-    z-index: 0;
+footer {
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+    font-size: 0.9em;
 }
