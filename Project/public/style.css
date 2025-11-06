@@ -1,15 +1,19 @@
+/* Corpo */
 body {
     font-family: "Segoe UI", Arial, sans-serif;
     background: #f9f9f9;
     color: #222;
     margin: 0;
     text-align: center;
+    position: relative; /* necessário para overlay */
 }
 
+/* Cabeçalho */
 header {
     background-color: #003366;
     color: white;
     padding: 20px;
+    animation: fadeIn 1.5s ease forwards;
 }
 
 .logo {
@@ -17,25 +21,52 @@ header {
     margin-bottom: 10px;
 }
 
+/* Títulos */
 h1,
 h2,
-h3 {
-    margin: 5px 0;
+h3,
+h4 {
+    margin: 10px 0;
 }
 
+/* Conteúdo principal com fundo cinematográfico */
 main {
-    padding: 20px;
+    background: url("image/macae.jpg") center/cover no-repeat;
+    padding: 40px 20px; /* aumenta espaço ao redor das sections */
+    position: relative;
+    transition: filter 0.5s ease;
 }
 
+/* Overlay cinza quando o vídeo toca */
+main.greyed::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(50, 50, 50, 0.6);
+    z-index: 0;
+    border-radius: 0;
+}
+
+/* Seções */
 section {
     margin: 30px auto;
     max-width: 800px;
-    background: white;
+    background: rgba(255, 255, 255, 0.75);
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease,
+        background-color 0.5s ease;
 }
 
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Listas */
 ul {
     list-style-type: none;
     padding: 0;
@@ -45,16 +76,59 @@ li {
     margin: 5px 0;
 }
 
+/* Vídeo */
 .video video {
     width: 100%;
     max-width: 720px;
     border-radius: 8px;
     margin-top: 10px;
+    position: relative;
+    z-index: 2; /* acima do overlay */
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease,
+        opacity 0.5s ease;
 }
 
+.video video:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
 footer {
     background-color: #003366;
     color: white;
     padding: 10px;
     font-size: 0.9em;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+/* Fade-in genérico */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    header,
+    footer {
+        padding: 15px;
+    }
+
+    section {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    .video video {
+        max-width: 100%;
+    }
 }
