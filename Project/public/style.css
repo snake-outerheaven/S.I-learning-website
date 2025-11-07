@@ -166,16 +166,25 @@ footer {
     }
 }
 
-.slide-carousel img {
-    max-width: 100%;
+.slide-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 30px auto;
     border-radius: 8px;
-    transition:
-        opacity 0.5s ease,
-        transform 0.5s ease;
-    z-index: 1; /* garante que a imagem fique atrás dos botões */
-    position: relative; /* necessário para z-index */
+    overflow: visible; /* permite que as setas saiam do frame */
 }
 
+.slide-carousel img {
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+}
+
+.slide-carousel img:hover {
+    transform: scale(1.02);
+}
+
+/* Setas fora do frame do slide */
 .slide-carousel .prev,
 .slide-carousel .next {
     position: absolute;
@@ -185,10 +194,24 @@ footer {
     color: white;
     border: none;
     padding: 10px 15px;
-    cursor: pointer;
     font-size: 1.5em;
     border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    pointer-events: auto;
     transition: background-color 0.3s ease;
-    user-select: none;
-    z-index: 2; /* garante que os botões fiquem acima da imagem */
+}
+
+.slide-carousel .prev:hover,
+.slide-carousel .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Posicionando fora do frame */
+.slide-carousel .prev {
+    left: -50px; /* seta à esquerda do slide */
+}
+
+.slide-carousel .next {
+    right: -50px; /* seta à direita do slide */
 }
