@@ -1,22 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Fade-in da página
+  /* ===============================================
+     FADE FROM BLACK SUAVE
+  =============================================== */
+  // Coloca o body invisível inicialmente
   document.body.style.opacity = 0;
+
+  // Cria overlay preto
+  const fadeOverlay = document.createElement("div");
+  fadeOverlay.classList.add("fade-overlay");
+  document.body.appendChild(fadeOverlay);
+
+  // Faz o fade do body
   setTimeout(() => {
     document.body.style.transition = "opacity 1.2s ease";
     document.body.style.opacity = 1;
-  }, 100);
+    fadeOverlay.style.opacity = 0;
+  }, 50);
 
-  // Seleção do vídeo e do main para overlay
+  // Remove overlay após o fade
+  setTimeout(() => {
+    fadeOverlay.remove();
+  }, 1300);
+
+  /* ===============================================
+     OVERLAY CINZA DURANTE O VÍDEO
+  =============================================== */
   const video = document.getElementById("interviewVideo");
   const mainSection = document.querySelector("main");
 
-  // Adiciona overlay cinza quando o vídeo toca
-  video.addEventListener("play", () => {
-    mainSection.classList.add("greyed");
-  });
-
-  // Remove overlay ao pausar ou terminar o vídeo
-  const removeGrey = () => mainSection.classList.remove("greyed");
-  video.addEventListener("pause", removeGrey);
-  video.addEventListener("ended", removeGrey);
+  if (video && mainSection) {
+    video.addEventListener("play", () => mainSection.classList.add("greyed"));
+    const removeGrey = () => mainSection.classList.remove("greyed");
+    video.addEventListener("pause", removeGrey);
+    video.addEventListener("ended", removeGrey);
+  }
 });

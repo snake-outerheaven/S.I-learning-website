@@ -19,6 +19,7 @@
             </h3>
             <h4>Professora: Élida Santos Ribeiro</h4>
         </header>
+
         <main>
             <section class="video video-bg">
                 <h2>Entrevista</h2>
@@ -26,6 +27,16 @@
                     <source src="video/apresentacao.mp4" type="video/mp4" />
                     Seu navegador não suporta o elemento de vídeo.
                 </video>
+            </section>
+
+            <!-- Nova seção: Carousel de slides -->
+            <section class="slide-carousel">
+                <h2>Slides da Apresentação</h2>
+                <div class="carousel-container">
+                    <button class="prev">&#10094;</button>
+                    <img id="slideImage" src="image/slide1.png" alt="Slide 1" />
+                    <button class="next">&#10095;</button>
+                </div>
             </section>
 
             <section class="grupo">
@@ -52,6 +63,36 @@
             <p>&copy; 2025 — FEMASS</p>
         </footer>
 
+        <!-- Script principal -->
         <script src="script.js"></script>
+        <script>
+            /* =========================
+               Carousel de Slides
+            ========================= */
+            const slides = [
+                "image/slide1.png",
+                "image/slide2.png",
+                "image/slide3.png",
+                "image/slide4.png",
+            ];
+            let currentSlide = 0;
+
+            const slideImage = document.getElementById("slideImage");
+            const prevBtn = document.querySelector(".slide-carousel .prev");
+            const nextBtn = document.querySelector(".slide-carousel .next");
+
+            function showSlide(index) {
+                currentSlide = (index + slides.length) % slides.length;
+                slideImage.src = slides[currentSlide];
+                slideImage.alt = `Slide ${currentSlide + 1}`;
+            }
+
+            prevBtn.addEventListener("click", () =>
+                showSlide(currentSlide - 1),
+            );
+            nextBtn.addEventListener("click", () =>
+                showSlide(currentSlide + 1),
+            );
+        </script>
     </body>
 </html>
